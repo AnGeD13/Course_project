@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress NavigationFile -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_component"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.course_project.profile.profileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <argument
+            android:name="myName"
+            app:argType="string"
+            android:defaultValue="Анна" />
+        <action
+            android:id="@+id/action_profileFragment_to_editNameFragment"
+            app:destination="@id/editNameFragment"
+            app:enterAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.example.course_project.contacts.contactsFragment"
+        android:label="fragment_contacts"
+        tools:layout="@layout/fragment_contacts" >
+        <action
+            android:id="@+id/action_contactsFragment_to_contactItemFragment"
+            app:destination="@id/contactItemFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="com.example.course_project.servicesFragment"
+        android:label="fragment_services"
+        tools:layout="@layout/fragment_services" >
+        <action
+            android:id="@+id/action_servicesFragment_to_newsFragment"
+            app:destination="@id/newsFragment"
+            app:enterAnim="@anim/from_left" />
+        <action
+            android:id="@+id/action_servicesFragment_to_stepsFragment"
+            app:destination="@id/stepsFragment"
+            app:enterAnim="@anim/from_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.course_project.news.newsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_newCountryFragment"
+            app:destination="@id/newCountryFragment"
+            app:enterAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_newsFragment_to_newsWorldFragment"
+            app:destination="@id/newsWorldFragment"
+            app:enterAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/stepsFragment"
+        android:name="com.example.course_project.stepsFragment"
+        android:label="fragment_steps"
+        tools:layout="@layout/fragment_steps" />
+    <fragment
+        android:id="@+id/newCountryFragment"
+        android:name="com.example.course_project.news.newCountryFragment"
+        android:label="fragment_new_country"
+        tools:layout="@layout/fragment_new_country" >
+        <action
+            android:id="@+id/action_newCountryFragment_to_newsPageFragment"
+            app:destination="@id/newsPageFragment"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsWorldFragment"
+        android:name="com.example.course_project.news.newsWorldFragment"
+        android:label="fragment_news_world"
+        tools:layout="@layout/fragment_news_world" >
+        <action
+            android:id="@+id/action_newsWorldFragment_to_newsPageFragment"
+            app:destination="@id/newsPageFragment"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.course_project.profile.infoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/newsPageFragment"
+        android:name="com.example.course_project.news.newsPageFragment"
+        android:label="fragment_news_page"
+        tools:layout="@layout/fragment_news_page" >
+        <argument
+            android:name="newsTitle"
+            app:argType="string" />
+        <argument
+            android:name="newDesc"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactItemFragment"
+        android:name="com.example.course_project.contacts.contactItemFragment"
+        android:label="fragment_contact_item"
+        tools:layout="@layout/fragment_contact_item" >
+        <argument
+            android:name="contactName"
+            app:argType="string" />
+        <argument
+            android:name="contactPhone"
+            app:argType="string" />
+        <argument android:name="contactPhoto"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/editNameFragment"
+        android:name="com.example.course_project.profile.editNameFragment"
+        android:label="fragment_edit_name"
+        tools:layout="@layout/fragment_edit_name" >
+        <action
+            android:id="@+id/action_editNameFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/from_right" />
+    </fragment>
+</navigation>
